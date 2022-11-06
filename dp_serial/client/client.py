@@ -4,6 +4,7 @@ import requests
 import json
 import pickle
 import pandas as pd
+import numpy as np
 from io import StringIO
 
 class Client():
@@ -35,12 +36,13 @@ class Client():
             print(f"Error while processing OpenDP request in enclave status code: {res.status_code} message: {res.text}")
             return res.text
 
-    def synth(self, model, eps, delta = 0, select_cols = []) -> pd.DataFrame:
+    def synth(self, model, eps, delta = 0, select_cols = [], mul_matrix: np.ndarray = np.array([])) -> pd.DataFrame:
         res = self._exec("smartnoise_synth", {
             "model": model, 
             "epsilon": eps, 
             "delta": delta,
-            "select_cols": select_cols
+            "select_cols": select_cols,
+            "mul_matrix": mul_matrix.tolist()
         })
         if res.status_code == 200:
             data = res.content.decode('utf8')
