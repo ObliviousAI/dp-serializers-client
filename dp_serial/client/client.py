@@ -113,7 +113,6 @@ class Client():
         tmp = tempfile.NamedTemporaryFile()
         # Open the file for writing.
         with open(tmp.name, 'w') as f:
-            print(tmp.name)
             submission.to_csv(f, index=False)
         # make prediciton dataframe and save to file
         # pred_df = pd.DataFrame(data=predictions, columns = ['labels'],index = test_x.index)
