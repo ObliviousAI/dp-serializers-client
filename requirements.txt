@@ -1,0 +1,7 @@
+opendp == 0.6.1,
+scikit-learn >= 1.1.2
+diffprivlib == 0.6.0
+numpy == 1.22.3
+requests == 2.28.1
+pandas==1.5.1
+pyyaml
