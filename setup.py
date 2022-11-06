@@ -7,7 +7,7 @@ here = pathlib.Path(__file__).parent.resolve()
 setup(
     name="dp serial",
     version="0.1.0",
-    description="A serializer/deserializer of popular differential privacy frameworks for remote exectution.",
+    description="A serializer of popular differential privacy frameworks(OpenDP, Smartnoise-SDK, Diffprivlib) for remote execution.",
     url="https://github.com/ObliviousAI/dp-serializer-client",
     author='Oblivious',
     author_email='hello@oblivious.ai',
