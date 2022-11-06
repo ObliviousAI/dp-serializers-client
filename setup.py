@@ -9,7 +9,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="dp serial",
-    version="0.1.3",
+    version="0.1.4",
     description="A serializer of popular differential privacy frameworks(OpenDP, Smartnoise-SDK, Diffprivlib) for remote execution.",
     long_description=long_description,
     long_description_content_type='text/markdown',
