@@ -4,10 +4,15 @@ from setuptools import find_packages, setup
 
 here = pathlib.Path(__file__).parent.resolve()
 
+this_directory = pathlib.Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
 setup(
     name="dp serial",
-    version="0.1.2",
+    version="0.1.3",
     description="A serializer of popular differential privacy frameworks(OpenDP, Smartnoise-SDK, Diffprivlib) for remote execution.",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     url="https://github.com/ObliviousAI/dp-serializer-client",
     author='Oblivious',
     author_email='hello@oblivious.ai',
