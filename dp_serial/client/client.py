@@ -15,9 +15,10 @@ class Client():
             self.team_name = team_name
             self.headers["x-oblv-user-name"] =  team_name
 
-    def diffprivlib(self, pipeline):
+    def diffprivlib(self, pipeline, y_column:str = ""):
         pipeline_str = serialize_pipeline(pipeline)
         pipeline_json = json.loads(pipeline_str)
+        pipeline_json["y_column"] = y_column
         res = self._exec("diffprivlib", pipeline_json)
         if res.status_code == 200:
             return pickle.loads(res.content)
