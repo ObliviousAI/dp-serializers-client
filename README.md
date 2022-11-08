@@ -7,7 +7,7 @@
 # Client package for DP Serializer
 
 The dp-seriel-client enables serialization of popular Differential Privacy frameworks.
-The client in dp-serial makes it possible to serialize and query data with a corresponding server running.
+The client in dp-serializers-client makes it possible to serialize and query data with a corresponding server running.
 
 
 ## Creating Enclave Client:
