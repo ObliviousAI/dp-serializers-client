@@ -21,19 +21,12 @@ The dp-seriel-client enables serialization of popular Differential Privacy frame
 
 ## Querying OpenDP
 ```python
-import dp_serial.opendp_logger.trans as trans
-import dp_serial.opendp_logger.meas as meas
-pipeline = comb.make_pureDP_to_fixed_approxDP(
-    trans.make_split_dataframe(separator=",", col_names=["col1", "col2", "col3", "col4", "col5", "col6", "labels"]) >>
-    trans.make_select_column(key="labels", TOA=str) >>
-    trans.make_cast(TIA=str, TOA=int) >>
-    trans.make_impute_constant(0) >> 
-    trans.make_clamp(bounds=(0, 1)) >>
-    trans.make_bounded_sum((0, 1)) >>
-    meas.make_base_discrete_laplace(scale=1.)
-)
+cols_to_select = ["head_gender", "s2_q21a_powergrid", "y_return"]
+mat = numpy.array([[0.001,0.1,0.001], [0.01,0.1,0.02], [0.41,0.1,0.3]])
 
-print(competition_enclaves.opendp(income_preprocessor)) #Data from API server with DP applied
+mwem_synthetic_data = competition_enclaves.synth("MWEM", 1, 0.0001, select_cols=cols_to_select, mul_matrix=mat)
+
+print(mwem_synthetic_data) #Synthetic Data from API server
 ```
 
 ## Querying Diffprivlib
