@@ -29,7 +29,7 @@ setup(
     python_requires=">=3.8, <4",
     install_requires=[
         "opendp == 0.6.1",
-        "opendp-logger == 0.1.8",
+        "opendp-logger == 0.1.9",
         "scikit-learn >= 1.1.2",
         "diffprivlib == 0.6.0",
         "numpy == 1.22.3",
