@@ -19,28 +19,6 @@ Once client is initialized it can be used to send requests to respective DP fram
 
 ## Querying OpenDP
 ```python
-cols_to_select = ["head_gender", "s2_q21a_powergrid", "y_return"]
-mat = numpy.array([[0.001,0.1,0.001], [0.01,0.1,0.02], [0.41,0.1,0.3]])
-
-mwem_synthetic_data = competition_enclaves.synth("MWEM", 1, 0.0001, select_cols=cols_to_select, mul_matrix=mat)
-
-print(mwem_synthetic_data) #Synthetic Data from API server
-```
-
-## Querying Diffprivlib
-```python
-from sklearn.pipeline import Pipeline
-from diffprivlib import models
-
-#Diffprivlib LR Pipeline 
-lr_pipe = Pipeline([
-    ('lr', models.LogisticRegression(data_norm=5))
-])
-trained_model = competition_enclaves.diffprivlib(splr_pipe, y_column="y_return") # Trained model from API Server with DP applied
-```
-
-## Querying Smartnoise-Synth
-```python
 import dp_serial.opendp_logger.trans as trans
 import dp_serial.opendp_logger.meas as meas
 import dp_serial.opendp_logger.comb as comb
@@ -58,6 +36,28 @@ pipeline = comb.make_pureDP_to_fixed_approxDP(
 opendp_result = competition_enclaves.opendp(pipeline)
 
 print(opendp_result) #Data from API server with DP applied
+```
+
+## Querying Diffprivlib
+```python
+from sklearn.pipeline import Pipeline
+from diffprivlib import models
+
+#Diffprivlib LR Pipeline 
+lr_pipe = Pipeline([
+    ('lr', models.LogisticRegression(data_norm=5))
+])
+trained_model = competition_enclaves.diffprivlib(splr_pipe, y_column="y_return") # Trained model from API Server with DP applied
+```
+
+## Querying Smartnoise-Synth
+```python
+cols_to_select = ["head_gender", "s2_q21a_powergrid", "y_return"]
+mat = numpy.array([[0.001,0.1,0.001], [0.01,0.1,0.02], [0.41,0.1,0.3]])
+
+mwem_synthetic_data = competition_enclaves.synth("MWEM", 1, 0.0001, select_cols=cols_to_select, mul_matrix=mat)
+
+print(mwem_synthetic_data) #Synthetic Data from API server
 ```
 
 ## Querying Smartnoise-SQL
