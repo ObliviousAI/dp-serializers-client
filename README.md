@@ -17,8 +17,6 @@ enclave_client = Client("http://localhost:3031")
 ```
 Once client is initialized it can be used to send requests to respective DP frameworks.
 
-The dp-seriel-client enables serialization of popular Differential Privacy frameworks and makes it possible to query data with corresponding server running.
-
 ## Querying OpenDP
 ```python
 import dp_serial.opendp_logger.trans as trans
