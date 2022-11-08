@@ -52,7 +52,7 @@ trained_model = competition_enclaves.diffprivlib(splr_pipe, y_column="y_return")
 
 ## Querying Smartnoise-Synth
 ```python
-cols_to_select = ["head_gender", "s2_q21a_powergrid", "y_return"]
+cols_to_select = ["col_1", "col_2", "col_3"]
 mat = numpy.array([[0.001,0.1,0.001], [0.01,0.1,0.02], [0.41,0.1,0.3]])
 
 mwem_synthetic_data = competition_enclaves.synth("MWEM", 1, 0.0001, select_cols=cols_to_select, mul_matrix=mat)
