@@ -20,7 +20,7 @@ Once client is initialized it can be used to send requests to respective DP fram
 ## Querying OpenDP
 ```python
 import opendp_logger
-opendp_logger.enable_logger()
+opendp_logger.enable_logging()
 
 import opendp.transformations as trans
 import opendp.measurements as meas
