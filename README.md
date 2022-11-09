@@ -19,9 +19,12 @@ Once client is initialized it can be used to send requests to respective DP fram
 
 ## Querying OpenDP
 ```python
-import dp_serial.opendp_logger.trans as trans
-import dp_serial.opendp_logger.meas as meas
-import dp_serial.opendp_logger.comb as comb
+import opendp_logger
+opendp_logger.enable_logging()
+
+import opendp.transformations as trans
+import opendp.measurements as meas
+import opendp.combinators as comb
 
 pipeline = comb.make_pureDP_to_fixed_approxDP(
     trans.make_split_dataframe(separator=",", col_names=["col_1", "col_2", "col_3"]) >>

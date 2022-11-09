@@ -10,7 +10,7 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name="dp serial",
     version="0.1.5",
-    description="A serializer of popular differential privacy frameworks(OpenDP, Smartnoise-SDK, Diffprivlib) for remote execution.",
+    description="A serializer of popular differential privacy frameworks (OpenDP, Smartnoise-SDK, Diffprivlib) for remote execution.",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url="https://github.com/ObliviousAI/dp-serializer-client",
@@ -29,6 +29,7 @@ setup(
     python_requires=">=3.8, <4",
     install_requires=[
         "opendp == 0.6.1",
+        "opendp-logger == 0.2.0",
         "scikit-learn >= 1.1.2",
         "diffprivlib == 0.6.0",
         "numpy == 1.22.3",

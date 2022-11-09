@@ -7,6 +7,9 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 
+import opendp_logger
+opendp_logger.enable_logging()
+
 class Client():
     def __init__(self, url, team_name = None):
         self.url = url
